@@ -1,0 +1,29 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model users {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  username String @unique
+  password String
+}
+
+model about {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  text     String
+}
+
+model sliders {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  order    Int
+  path     String
+  name     String
+  active   Boolean 
+}
+
+ 

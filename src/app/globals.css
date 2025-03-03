@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Mexicana";
+  src: url("../../public/fonts/Mexicana.ttf");
+}
+
+@font-face {
+  font-family: "MexicanTequila";
+  src: url("../../public/fonts/MexicanTequila.ttf");
+}
+
+.txt-stroke-primary {
+  -webkit-text-stroke: 0.2px black;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  margin: 0 auto;
+  color: rgb(var(--foreground-rgb));
+  background: #0b0b0d; 
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
